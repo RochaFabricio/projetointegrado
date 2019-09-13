@@ -17,7 +17,7 @@
                    @foreach ($users as $user)
                     <p> <b>Nome:</b> {{$user->name}}</p>
                     <p> <b>Prontuario:</b> {{$user->prontuario}}</p>
-                    <p> <b>Email:</b> {{(sizeof($user->email) > 0) ? $user->email : 'Não tem e-mail' }}</p>
+                    <p> <b>Email:</b> {{$user->email}}</p>
                    @endforeach
                 </div>
             </div>

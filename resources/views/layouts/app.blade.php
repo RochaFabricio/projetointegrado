@@ -1,3 +1,8 @@
+<?php 
+    if(!isset($existe)){
+        $existe = 0;
+    } 
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -44,9 +49,11 @@
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
+                                @if ($existe == 1)
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
+                                @endif
                             @endif
                         @else
                             <li class="nav-item dropdown">

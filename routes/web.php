@@ -15,8 +15,21 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'VerificaUserAdmin@verificaLogin');
+
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('campus')->group(function () {
+  Route::get('/', 'CampusController@listar');
+  Route::get('/novo', 'CampusController@detalhes');
+  Route::post('/novo', 'CampusController@createOrUpdate');
+
+
+
+  Route::get('/{campus}/detalhes', 'CampusController@detalhes');
+  // Route::post('/editar', 'ComercialController@update');
+});
+

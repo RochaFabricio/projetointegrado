@@ -19,6 +19,8 @@
                     <p> <b>Prontuario:</b> {{$user->prontuario}}</p>
                     <p> <b>Email:</b> {{$user->email}}</p>
                    @endforeach
+
+                   <a href="/campus">Campus</a><a href="/campus/novo">Novo</a>
                 </div>
             </div>
         </div>

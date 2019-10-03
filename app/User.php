@@ -19,6 +19,10 @@ class User extends Authenticatable
         'name', 'email', 'password', 'prontuario','tipo',
     ];
 
+    public function coordenacao() {
+        return $this->hasMany('App\Coordenador', 'user_id');
+    }
+  
     /**
      * The attributes that should be hidden for arrays.
      *

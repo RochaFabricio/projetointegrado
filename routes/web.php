@@ -27,9 +27,14 @@ Route::prefix('campus')->group(function () {
   Route::get('/novo', 'CampusController@detalhes');
   Route::post('/novo', 'CampusController@createOrUpdate');
 
-
-
   Route::get('/{campus}/detalhes', 'CampusController@detalhes');
-  // Route::post('/editar', 'ComercialController@update');
+});
+
+Route::prefix('coordenacao')->group(function () {
+  Route::get('/', 'CoordenacaoController@listar');
+  Route::get('/novo', 'CoordenacaoController@detalhes');
+  Route::post('/novo', 'CoordenacaoController@createOrUpdate');
+
+  Route::get('/{coordenacao}/detalhes', 'CoordenacaoController@detalhes');
 });
 

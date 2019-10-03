@@ -12,5 +12,10 @@ class Campus extends Model
         "ativo",
     ];
 
+    public function coordenacao() {
+        return $this->hasMany('App\Coordenacao', 'user_id');
+    }
+
+
     protected $table = "campus";
 }

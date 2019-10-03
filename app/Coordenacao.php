@@ -13,5 +13,13 @@ class Coordenacao extends Model
         "fim"
     ];
 
+    public function campus() {
+        return $this->belongsTo('App\Campus', 'campus_id');
+    }
+
+    public function user() {
+        return $this->belongsTo('App\USer', 'user_id');
+    }
+
     protected $table = "coordenacao";
 }

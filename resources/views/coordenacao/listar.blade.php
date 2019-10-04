@@ -16,7 +16,7 @@
                             <th scope="col">Sigla</th>
                             <th scope="col">Campus</th>
                             <th scope="col">Status Até</th>
-                            <th>test</th>
+                            <th scope="col">Editar</th>
                           </tr>
                         </thead>
                         <tbody> 
@@ -31,7 +31,7 @@
                         <td>
                           {{$cordenador->fim ? $cordenador->fim : 'Atual'}}
                         </td>
-                        <td><a href="http://"><i class="far fa-edit"></i></a></td>
+                        <td><a href="/coordenacao/{{$cordenador->id}}/detalhes"> >></a></td>
                       </tr>
                     </a>
                     @endforeach
@@ -43,3 +43,4 @@
     </div>
 </div>
 @endsection
+

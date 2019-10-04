@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Campus;
 use App\Coordenacao;
+use App\User;
 use Illuminate\Http\Request;
 
 class CoordenacaoController extends Controller
@@ -20,5 +22,17 @@ class CoordenacaoController extends Controller
             "cordenadores" => $cordenadores
         ]);
     }   
+
+    public function detalhes(Coordenacao $coordenacao, Request $request){
+
+        $campus = Campus::get();
+        $coordenadores = User::get();
+        
+        return view('coordenacao.detalhes')->with([
+            "coordenacao" => $coordenacao,
+            "campus" => $campus,
+            "coordenadores" => $coordenadores,
+        ]);
+    }
 
 }

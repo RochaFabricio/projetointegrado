@@ -29,8 +29,13 @@ class HomeController extends Controller
 
         // dd($users);
 
+        if(sizeof($users) > 0 ){
+            $existe = 1;
+        } 
+
         return view('home')->with([
             "users" => $users,
+            "existe" => $existe
         ]);
     }
 }

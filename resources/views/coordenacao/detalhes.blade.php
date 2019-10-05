@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Novo</div>
                 <div class="card-body">
-                    <form action="/campus/novo" method="POST">
+                    <form action="/coordenacao/novo" method="POST">
                       @csrf
                       <div class="form-group">
                         <label for="sigla">Campus</label>

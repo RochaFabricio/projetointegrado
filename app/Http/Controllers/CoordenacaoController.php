@@ -35,4 +35,18 @@ class CoordenacaoController extends Controller
         ]);
     }
 
+    public function createOrUpdate(Coordenacao $coordenacao, Request $request){
+        // dd($request);
+        
+        $coordenacao = Coordenacao::firstOrNew(['id' => $request->id]);
+        $coordenacao->campus_id = $request->campus;
+        $coordenacao->user_id = $request->coordenador;
+        if (!sizeof($request->fim) > 0) {
+        $coordenacao->fim = $request->fim;
+        }
+        $coordenacao->save();
+
+        return redirect('coordenacao/'.$coordenacao->id.'/detalhes');
+    }
+
 }

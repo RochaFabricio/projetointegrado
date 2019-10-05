@@ -16,7 +16,7 @@
 // });
 
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'VerificaUserAdmin@verificaLogin')->name('home');
 
 Auth::routes();
 
@@ -36,5 +36,13 @@ Route::prefix('coordenacao')->group(function () {
   Route::post('/novo', 'CoordenacaoController@createOrUpdate');
 
   Route::get('/{coordenacao}/detalhes', 'CoordenacaoController@detalhes');
+});
+
+Route::prefix('usuarios')->group(function () {
+  Route::get('/', 'UsuarioController@listar');
+  Route::get('/novo', 'UsuarioController@detalhes');
+  Route::post('/novo', 'UsuarioController@createOrUpdate');
+
+  Route::get('/{usuario}/detalhes', 'UsuarioController@detalhes');
 });
 

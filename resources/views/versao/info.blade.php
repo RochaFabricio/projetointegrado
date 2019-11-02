@@ -19,15 +19,10 @@
                         @endif
                     @endforeach
                         <p>Data e Hora Banco: {{ \Carbon\Carbon::now() }}</p>
-
                         <p>Navegador: {{ $browser->getName() }} - Versão: {{ $browser->getVersion() }}</p>
                         <p>Sistema Operacional: {{ $os->getName() }}</p>
                         <p>Liguagem: {{ ($language->getLanguage() == 'pt') ? 'Português' : $language->getLanguage() }}</p>
-                        {{-- <p>Dispositivo: {{ $device->getName() }}</p> --}}
-
-
-
-                </div>
+                    </div>
                 </div>
             </div>
         </div>

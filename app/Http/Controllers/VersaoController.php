@@ -26,19 +26,14 @@ class VersaoController extends Controller
         $ip = $request->ip();
         $device = new Device();
 
-        return response()->json(phpinfo());
-        // dd($device);
-        // dd($request->server->parameters);
-
-
-        // return view('versao.info')->with([
-        //     'versao_db' => $versao_db,
-        //     'data_hora_db' => $data_hora_db,
-        //     'browser' => $browser,
-        //     'os' => $os,
-        //     'language' => $language,
-        //     'ip' => $ip,
-        //     'device' => $device
-        //     ]);
+        return view('versao.info')->with([
+            'versao_db' => $versao_db,
+            'data_hora_db' => $data_hora_db,
+            'browser' => $browser,
+            'os' => $os,
+            'language' => $language,
+            'ip' => $ip,
+            'device' => $device
+            ]);
     }
 }

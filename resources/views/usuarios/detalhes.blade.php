@@ -5,8 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Novo</div>
-
+                @if (!$usuario->exists)
+                <div class="card-header">Usuário - Novo</div>
+                @else
+                <div class="card-header">{{$usuario->name}} - Editar</div>
+                @endif
+  
                 <div class="card-body">
                     <form action="/usuarios/novo" method="POST">
                       @csrf

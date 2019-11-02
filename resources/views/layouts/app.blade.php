@@ -86,6 +86,15 @@
                                     <a class="dropdown-item" href="/coordenacao/novo" title="Novo">Novo</a>
                                 </div>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Versão
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/versao" title="Informações">Informações</a>
+                                    {{-- <a class="dropdown-item" href="/coordenacao/novo" title="Novo">Novo</a> --}}
+                                </div>
+                            </li>
                         </ul>
                         @endif
                     

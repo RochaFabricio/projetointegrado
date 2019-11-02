@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Novo</div>
+              @if (!$campus->exists)
+              <div class="card-header">Campus - Novo</div>
+              @else
+              <div class="card-header">{{$campus->nome}} - Editar</div>
+              @endif
 
                 <div class="card-body">
                     <form action="/campus/novo" method="POST">

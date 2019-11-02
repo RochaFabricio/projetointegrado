@@ -1588,17 +1588,17 @@
     },
     {
         "name": "nesbot/carbon",
-        "version": "2.22.3",
-        "version_normalized": "2.22.3.0",
+        "version": "2.25.3",
+        "version_normalized": "2.25.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/briannesbitt/Carbon.git",
-            "reference": "738fbd8d80b2c5e158fda76c29c2de432fcc6f7e"
+            "reference": "d07636581795383e2fea2d711212d30f941f2039"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/738fbd8d80b2c5e158fda76c29c2de432fcc6f7e",
-            "reference": "738fbd8d80b2c5e158fda76c29c2de432fcc6f7e",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d07636581795383e2fea2d711212d30f941f2039",
+            "reference": "d07636581795383e2fea2d711212d30f941f2039",
             "shasum": ""
         },
         "require": {
@@ -1614,7 +1614,7 @@
             "phpunit/phpunit": "^7.5 || ^8.0",
             "squizlabs/php_codesniffer": "^3.4"
         },
-        "time": "2019-08-07T12:36:44+00:00",
+        "time": "2019-10-20T11:05:44+00:00",
         "bin": [
             "bin/carbon"
         ],
@@ -1647,7 +1647,7 @@
                 "homepage": "http://github.com/kylekatarnls"
             }
         ],
-        "description": "A simple API extension for DateTime.",
+        "description": "An API extension for DateTime that supports 281 different languages.",
         "homepage": "http://carbon.nesbot.com",
         "keywords": [
             "date",
@@ -3604,6 +3604,57 @@
         ],
         "description": "Library that helps with managing the version number of Git-hosted PHP projects",
         "homepage": "https://github.com/sebastianbergmann/version"
+    },
+    {
+        "name": "sinergi/browser-detector",
+        "version": "6.1.2",
+        "version_normalized": "6.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sinergi/php-browser-detector.git",
+            "reference": "e1bee473663bb82e5ff58a3a2c0bf81c8671de5a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sinergi/php-browser-detector/zipball/e1bee473663bb82e5ff58a3a2c0bf81c8671de5a",
+            "reference": "e1bee473663bb82e5ff58a3a2c0bf81c8671de5a",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3.3 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8 || ^5.0"
+        },
+        "time": "2016-12-28T16:31:30+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Sinergi\\BrowserDetector\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Chris Schuld"
+            },
+            {
+                "name": "Gabriel Bull",
+                "email": "me@gabrielbull.com"
+            }
+        ],
+        "description": "Detecting the user's browser, operating system and language.",
+        "keywords": [
+            "browser",
+            "detection",
+            "language",
+            "operating system",
+            "os"
+        ]
     },
     {
         "name": "swiftmailer/swiftmailer",

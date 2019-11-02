@@ -46,3 +46,5 @@ Route::prefix('usuarios')->group(function () {
   Route::get('/{usuario}/detalhes', 'UsuarioController@detalhes');
 });
 
+Route::get('/versao', 'VersaoController@index');
+

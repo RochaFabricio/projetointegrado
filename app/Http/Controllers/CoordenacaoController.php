@@ -25,6 +25,7 @@ class CoordenacaoController extends Controller
 
     public function detalhes(Coordenacao $coordenacao, Request $request){
 
+        $coordenacao->load('user')->load('campus');
         $campus = Campus::get();
         $coordenadores = User::get();
         

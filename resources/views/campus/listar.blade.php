@@ -9,6 +9,7 @@
 
                 <div class="card-body">
                     <table class="table">
+                      @if(sizeof($campus) > 0)
                         <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -19,22 +20,25 @@
                           </tr>
                         </thead>
                         <tbody> 
-                    @foreach ($campus as $campus)
-                      <tr>
-                        <th>{{$campus->id}}</th>
-                        <td>{{$campus->sigla}}</td>
-                        <td>{{$campus->nome}}</td>
-                        <td>
-                          @if ($campus->ativo == 1)
-                            Ativo
-                          @else
-                            Desativado
-                          @endif
-                        </td>
-                        <td><a href="/campus/{{$campus->id}}/detalhes"> >></a></td>
-                      </tr>
-                    @endforeach
+                        @foreach ($campus as $campus)
+                          <tr>
+                            <th>{{$campus->id}}</th>
+                            <td>{{$campus->sigla}}</td>
+                            <td>{{$campus->nome}}</td>
+                            <td>
+                              @if ($campus->ativo == 1)
+                                Ativo
+                              @else
+                                Desativado
+                              @endif
+                            </td>
+                            <td><a href="/campus/{{$campus->id}}/detalhes"> >></a></td>
+                          </tr>
+                        @endforeach
                         </tbody>
+                        @else
+                        <p>Nenhum cadastro existente.</p>
+                        @endif
                     </table>
                 </div>
             </div>

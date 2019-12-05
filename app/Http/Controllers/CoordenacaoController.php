@@ -7,6 +7,9 @@ use App\Coordenacao;
 use App\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Carbon;
+use App\Classes\FormataTudo;
+
 class CoordenacaoController extends Controller
 {
     public function listar(Request $request){
@@ -39,12 +42,16 @@ class CoordenacaoController extends Controller
     public function createOrUpdate(Coordenacao $coordenacao, Request $request){
         // dd($request);
         
+        $p = new FormataTudo();
+
         $coordenacao = Coordenacao::firstOrNew(['id' => $request->id]);
         $coordenacao->campus_id = $request->campus;
-        $coordenacao->user_id = $request->coordenador;
-        if (!sizeof($request->fim) > 0) {
-        $coordenacao->fim = $request->fim;
+        $coordenacao->user_id = $request->coordenador; 
+
+        if ($request->fim) {
+            $coordenacao->fim =  $p->formatar($request->fim, 'datahora', 'banco');
         }
+        
         $coordenacao->save();
 
         return redirect('coordenacao/'.$coordenacao->id.'/detalhes');

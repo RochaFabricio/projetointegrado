@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+<?php 
+
+$p = new \App\Classes\FormataTudo();
+
+?>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -34,7 +40,8 @@
                       <input type="hidden" value="{{$coordenacao->id}}" name="id">
                         <div class="form-group">
                           <label for="sigla">Fim</label>
-                          <input type="text" class="form-control" id="fim" name="fim" aria-describedby="emailHelp" value="{{$coordenacao->fim}}" placeholder="Este é o coordenador atual">
+                          {{-- {{dd($p->formatar($coordenacao->fim, 'datahora'))}} --}}
+                          <input type="datetime" class="form-control" id="fim" name="fim" value="{{$p->formatar($coordenacao->fim, 'datahora')}}" placeholder="Ex: dd/mm/aaaa 00:00">
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                       </form>
@@ -52,6 +59,7 @@
   $( document ).ready(function() {
     $('#campus').val('{{$coordenacao->campus_id}}');
     $('#coordenador').val('{{$coordenacao->user_id}}');
+
   });
 </script>
 

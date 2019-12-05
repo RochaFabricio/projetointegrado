@@ -17,7 +17,7 @@
                       <input type="hidden" value="{{$campus->id}}" name="id">
                         <div class="form-group">
                           <label for="sigla">Sigla</label>
-                          <input type="text" class="form-control" id="sigla" name="sigla" aria-describedby="emailHelp" value="{{$campus->sigla}}" placeholder="Sigla">
+                          <input type="text" class="form-control" id="sigla" name="sigla" maxlength="7" size="7" aria-describedby="emailHelp" value="{{$campus->sigla}}" placeholder="Sigla">
                         </div>
                         <div class="form-group">
                           <label for="nome">Nome</label>

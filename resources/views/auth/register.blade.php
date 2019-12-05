@@ -43,7 +43,7 @@
                             <label for="prontuario" class="col-md-4 col-form-label text-md-right">{{ __('Prontuario') }}</label>
 
                             <div class="col-md-6">
-                                <input id="prontuario" type="text" class="form-control @error('prontuario') is-invalid @enderror" name="prontuario" value="{{ old('prontuario') }}" required autocomplete="prontuario">
+                                <input id="prontuario" type="text" class="form-control @error('prontuario') is-invalid @enderror" name="prontuario" maxlength="9" size="9" value="{{ old('prontuario') }}" required autocomplete="prontuario">
 
                                 @error('prontuario')
                                     <span class="invalid-feedback" role="alert">

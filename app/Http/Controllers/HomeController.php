@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,9 +26,10 @@ class HomeController extends Controller
 
     public function index()
     {
+        $tipo = Auth::user()->tipo;
         $users = User::get();
-
-        // dd($users);
+        // $user = User::where('email', '=', $email)->get();
+        // dd($tipo);
 
         if(sizeof($users) > 0 ){
             $existe = 1;
@@ -35,6 +37,7 @@ class HomeController extends Controller
 
         return view('home')->with([
             "users" => $users,
+            "tipo" => $tipo,
             "existe" => $existe
         ]);
     }

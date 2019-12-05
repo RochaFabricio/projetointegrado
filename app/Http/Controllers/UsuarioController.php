@@ -31,9 +31,12 @@ class UsuarioController extends Controller
         $usuario->name = $request->nome;
         $usuario->email = $request->email;
         $usuario->prontuario = $request->prontuario;
-        if ((sizeof($request->senha) > 0) && (sizeof($request->conf_senha))) {
+        if($request->senha && $request->conf_senha){
             $usuario->password = Hash::make($request->senha);
         }
+        // if ((sizeof($request->senha,1) > 0) && (sizeof($request->conf_senha,1))) {
+        //     $usuario->password = Hash::make($request->senha);
+        // }
         $usuario->save();
 
         return redirect('usuarios/'.$usuario->id.'/detalhes');

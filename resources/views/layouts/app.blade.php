@@ -5,7 +5,8 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> --}}
+<html lang="pt-br"></html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,9 +30,17 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                
+                @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Redes Lógica
                 </a>
+                @else
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    Redes Lógica
+                </a>
+                @endguest
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -52,8 +61,8 @@
                                 @endif
                             @endif
                         @else
-                    
-                        @if (Auth::user()->id == 1)
+                                
+                        @if (Auth::user()->tipo == 1)
                             <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-3">
                             <li class="nav-item">
@@ -96,6 +105,21 @@
                                 </div>
                             </li>
                         </ul>
+                        @else
+                        <ul class="navbar-nav mr-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Perfil
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="/usuarios/{{Auth::user()->id}}/detalhes">Editar</a>
+                                        {{-- <a class="dropdown-item" href="/usuarios/novo">Novo</a> --}}
+                                    </div>
+                                </li>
+                        </ul>
                         @endif
                     
                             <li class="nav-item dropdown">
@@ -128,7 +152,13 @@
         </main>
     </div>
 
+    {{-- <!-- this should go after your </body> -->
+    <link rel="stylesheet" type="text/css" href="/jquery.datetimepicker.css">
+    <script src="/jquery.js"></script>
+    <script src="/build/jquery.datetimepicker.full.min.js"></script> --}}
+
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 
     @yield('footerScripts')
     

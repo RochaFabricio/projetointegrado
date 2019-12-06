@@ -37,6 +37,22 @@
                           <label for="Senha">Confirmar Senha</label>
                           <input type="password" class="form-control" id="conf_senha" name="conf_senha" placeholder="Confirmar Senha" value="">
                         </div>
+                        @if(Auth::user()->tipo == 1)
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipo_user" id="exampleRadios1" value="1" {{($usuario->tipo == 1) ? 'checked' : '' }} >
+                            <label class="form-check-label" for="exampleRadios1">
+                              Administrador
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipo_user" id="exampleRadios2" value="0" {{($usuario->tipo == 0) ? 'checked' : '' }}>
+                            <label class="form-check-label" for="exampleRadios2">
+                              Usuário Comum
+                            </label>
+                          </div>
+                          @endif
+                        <br>
+
                         <button type="submit" class="btn btn-primary">Enviar</button>
                       </form>
                 </div>

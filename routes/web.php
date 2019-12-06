@@ -48,3 +48,9 @@ Route::prefix('usuarios')->group(function () {
 
 Route::get('/versao', 'VersaoController@index');
 
+Route::get('/rede', function(){
+  return view('rede.listar');
+});
+
+Route::post('/rede', 'RedeController@index');
+

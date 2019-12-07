@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Campus' => $baseDir . '/app/Campus.php',
+    'App\\Classes\\FormataTudo' => $baseDir . '/app/Classes/FormataTudo.php',
+    'App\\Classes\\IP' => $baseDir . '/app/Classes/IP.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Coordenacao' => $baseDir . '/app/Coordenacao.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -19,6 +21,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CoordenacaoController' => $baseDir . '/app/Http/Controllers/CoordenacaoController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\RedeController' => $baseDir . '/app/Http/Controllers/RedeController.php',
     'App\\Http\\Controllers\\UsuarioController' => $baseDir . '/app/Http/Controllers/UsuarioController.php',
     'App\\Http\\Controllers\\VerificaUserAdmin' => $baseDir . '/app/Http/Controllers/VerificaUserAdmin.php',
     'App\\Http\\Controllers\\VersaoController' => $baseDir . '/app/Http/Controllers/VersaoController.php',

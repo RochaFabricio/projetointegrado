@@ -424,6 +424,8 @@ class ComposerStaticInit5294546efb5675b3e6aa0a220db7271a
 
     public static $classMap = array (
         'App\\Campus' => __DIR__ . '/../..' . '/app/Campus.php',
+        'App\\Classes\\FormataTudo' => __DIR__ . '/../..' . '/app/Classes/FormataTudo.php',
+        'App\\Classes\\IP' => __DIR__ . '/../..' . '/app/Classes/IP.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Coordenacao' => __DIR__ . '/../..' . '/app/Coordenacao.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -436,6 +438,7 @@ class ComposerStaticInit5294546efb5675b3e6aa0a220db7271a
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CoordenacaoController' => __DIR__ . '/../..' . '/app/Http/Controllers/CoordenacaoController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\RedeController' => __DIR__ . '/../..' . '/app/Http/Controllers/RedeController.php',
         'App\\Http\\Controllers\\UsuarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsuarioController.php',
         'App\\Http\\Controllers\\VerificaUserAdmin' => __DIR__ . '/../..' . '/app/Http/Controllers/VerificaUserAdmin.php',
         'App\\Http\\Controllers\\VersaoController' => __DIR__ . '/../..' . '/app/Http/Controllers/VersaoController.php',

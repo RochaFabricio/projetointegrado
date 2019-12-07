@@ -18,8 +18,8 @@ class RedeController extends Controller
                             
         if( $ip->valida_endereco() ) {
             
-            $ips = [
-                "endereco/rede" => $ip->endereco_completo(),
+            $rede = [
+                "endereco_rede" => $ip->endereco_completo(),
                 "endereco" => $ip->endereco(),
                 "prefixo" => $ip->cidr(),
                 "mascara" => $ip->mascara(),
@@ -30,10 +30,11 @@ class RedeController extends Controller
                 "total_ips" => $ip->total_ips(),
                 "total_validos" => $ip->ips_rede(),
             ];
-            dd($ips);
+            $erro = 0;
+            
         } else {
-            echo 'Endereço IPv4 inválido!';
+            $erro = 1;
         }
-        // dd($request);
+        return view('rede.preview')->with(['rede' => $rede, 'erro' => $erro]);
     }
 }

@@ -11,5 +11,9 @@ class Rede extends Model
         "mask"
     ];
 
+    // public function ips() {
+    //     return $this->hasMany('App\User');
+    // }
+
     protected $table = "rede"; 
 }

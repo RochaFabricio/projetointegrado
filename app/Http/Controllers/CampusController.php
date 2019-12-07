@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Campus;
+use App\Erro;
+use App\Events\Erros;
 use Illuminate\Http\Request;
 
 class CampusController extends Controller
@@ -10,13 +12,8 @@ class CampusController extends Controller
     public function listar(Request $request){
 
 
-        // $campus = Campus::firstOrNew(['id' => $request->id]);
-        // $campus->sigla = "BRT";
-        // $campus->nome = "IFSP Barretos";
-        // $campus->save();
-
         $campus = Campus::where('ativo', 1)->get();
-        // dd($campus);
+
         return view('campus.listar')->with([
             "campus" => $campus
         ]);
@@ -24,8 +21,6 @@ class CampusController extends Controller
 
     public function detalhes(Campus $campus, Request $request){
 
-        // $campus = Campus::find($campus->id)->get();
-        
         return view('campus.detalhes')->with([
             "campus" => $campus,
         ]);
@@ -34,11 +29,22 @@ class CampusController extends Controller
 
     public function createOrUpdate(Campus $campus, Request $request){
 
-        $campus = Campus::firstOrNew(['id' => $request->id]);
-        $campus->sigla = $request->sigla;
-        $campus->nome = $request->nome;
-        $campus->save();
+        try {
+            $campus = Campus::firstOrNew(['id' => $request->id]);
+            $campus->sigla = $request->sigla;
+            $campus->nome = $request->nome;
+            $campus->save();
 
+        } catch (\Throwable $th) {
+            $erros = new Erro();
+            $erros->view = "campus.detalhes";
+            $erros->descricao = "Erro ao inserir:".$th;
+
+            event(new Erros($erros));
+
+            return redirect('/campus');
+        }
+        
         return redirect('campus/'.$campus->id.'/detalhes');
     }
 }

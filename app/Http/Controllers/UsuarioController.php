@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Erro;
+use App\Events\Erros;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -25,18 +27,28 @@ class UsuarioController extends Controller
     }
 
     public function createOrUpdate(User $usuario, Request $request){
-        // dd($request);
         
-        $usuario = User::firstOrNew(['id' => $request->id]);
-        $usuario->name = $request->nome;
-        $usuario->email = $request->email;
-        $usuario->prontuario = $request->prontuario;
-        if($request->senha && $request->conf_senha){
-            $usuario->password = Hash::make($request->senha);
-        }
-        $usuario->tipo = $request->tipo_user;
-        $usuario->save();
+        try {
+            $usuario = User::firstOrNew(['id' => $request->id]);
+            $usuario->name = $request->nome;
+            $usuario->email = $request->email;
+            $usuario->prontuario = $request->prontuario;
+            if($request->senha && $request->conf_senha){
+                $usuario->password = Hash::make($request->senha);
+            }
+            $usuario->tipo = $request->tipo_user;
+            $usuario->save();
+        } catch (\Throwable $th) {
+            $erros = new Erro();
+            $erros->view = "usuario.detalhes";
+            $erros->descricao = "Erro ao inserir:".$th;
 
+            event(new Erros($erros));
+
+            return redirect('/usuarios');
+
+        }
+        
         return redirect('usuarios/'.$usuario->id.'/detalhes');
     }
 }

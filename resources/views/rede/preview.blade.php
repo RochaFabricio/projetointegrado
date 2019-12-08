@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     @if($erro == 0)
-                        
+                        {{dd($rede)}}
                     @else
                     <p>Endereço de IP inválido</p>
                     @endif

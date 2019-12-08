@@ -13,7 +13,7 @@ class Ips extends Model
     ];
 
     public function rede() {
-        return $this->hasMany('App\Rede', 'rede_id');
+        return $this->belongsTo('App\Rede', 'rede_id');
     }
 
     protected $table = "ips_validos"; 

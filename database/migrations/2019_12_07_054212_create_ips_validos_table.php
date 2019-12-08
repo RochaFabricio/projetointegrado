@@ -17,7 +17,7 @@ class CreateIpsValidosTable extends Migration
             $table->increments('id');
             $table->string('ip');
             $table->integer('rede_id');
-            $table->string('uso');
+            $table->string('uso')->nullable();
             $table->timestamps();
         });
     }

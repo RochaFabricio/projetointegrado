@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Classes\IP;
+use App\Ips;
+use App\Rede;
 
 class RedeController extends Controller
 {
@@ -18,6 +20,17 @@ class RedeController extends Controller
                             
         if( $ip->valida_endereco() ) {
             
+            // try {
+            //     $rede = new Rede();
+            //     $rede->ip = $ip->endereco();
+            //     $rede->mask = $ip->mascara();
+            //     $rede->save();
+
+            //     // $validos = new Ips();
+            //     // $validos->
+            // } catch (\Throwable $th) {
+            //     throw $th;
+            // }
             $rede = [
                 "endereco_rede" => $ip->endereco_completo(),
                 "endereco" => $ip->endereco(),

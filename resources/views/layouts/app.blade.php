@@ -110,7 +110,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <a class="dropdown-item" href="/rede" title="Redes">Listar</a>
-                                        {{-- <a class="dropdown-item" href="/coordenacao/novo" title="Novo">Novo</a> --}}
+                                        <a class="dropdown-item" href="/rede/novo" title="Novo">Novo</a>
                                     </div>
                                 </li>
                         </ul>

@@ -48,9 +48,18 @@ Route::prefix('usuarios')->group(function () {
 
 Route::get('/versao', 'VersaoController@index');
 
-Route::get('/rede', function(){
-  return view('rede.listar');
+Route::prefix('rede')->group(function () {
+  Route::get('/', 'RedeController@index');
+
+  Route::get('/novo', 'RedeController@novo');
+
+  Route::post('/novo', 'RedeController@createOrUpdate');
+
+  Route::get('/{rede}/detalhes', 'RedeController@detalhes');
+
 });
 
-Route::post('/rede', 'RedeController@index');
+// Route::get('/rede', 'RedeController@index');
+
+// Route::post('/rede', 'RedeController@createOrUpdate');
 

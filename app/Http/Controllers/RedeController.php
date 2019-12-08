@@ -10,44 +10,49 @@ use App\Rede;
 
 class RedeController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
 
-        // dd($request->ip);
-        // $p = new FormataTudo();
+        $redes = Rede::get();
+
+        return view('rede.listar')->with(['redes' => $redes]);
+    }
+
+    public function novo(){
+
+        $redes = Rede::get();
+
+        return view('rede.novo');
+    }
+
+    public function detalhes(Rede $rede, Request $request){
+
+        return view('rede.detalhes')->with(['rede' => $rede]);
+
+    }
+
+    public function createOrUpdate(Request $request){
+
         $ip = new IP($request->ip);
 
-        // dd($ip);
-                            
         if( $ip->valida_endereco() ) {
             
-            // try {
-            //     $rede = new Rede();
-            //     $rede->ip = $ip->endereco();
-            //     $rede->mask = $ip->mascara();
-            //     $rede->save();
+            try {
+                $rede = new Rede();
+                $rede->ip = $ip->endereco();
+                $rede->mask = $ip->mascara();
+                $rede->save();
 
-            //     // $validos = new Ips();
-            //     // $validos->
-            // } catch (\Throwable $th) {
-            //     throw $th;
-            // }
-            $rede = [
-                "endereco_rede" => $ip->endereco_completo(),
-                "endereco" => $ip->endereco(),
-                "prefixo" => $ip->cidr(),
-                "mascara" => $ip->mascara(),
-                "ip_rede" => $ip->rede().'/'.$ip->cidr(),
-                "broadcast" => $ip->broadcast(),
-                "primeiro_host" => $ip->primeiro_ip(),
-                "ultimo_host" => $ip->ultimo_ip(),
-                "total_ips" => $ip->total_ips(),
-                "total_validos" => $ip->ips_rede(),
-            ];
+            } catch (\Throwable $th) {
+                throw $th;
+            }
+
             $erro = 0;
             
         } else {
             $erro = 1;
         }
-        return view('rede.preview')->with(['rede' => $rede, 'erro' => $erro]);
+
+        return redirect('/rede');
+
     }
 }

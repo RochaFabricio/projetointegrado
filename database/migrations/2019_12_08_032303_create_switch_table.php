@@ -19,7 +19,7 @@ class CreateSwitchTable extends Migration
             $table->string('modelo');
             $table->integer('qtd_portas');
             $table->string('porta_inicio');
-            $table->string('local');
+            $table->integer('local_id');
             $table->integer('rede_ip');
             $table->string('usuario');
             $table->string('senha');

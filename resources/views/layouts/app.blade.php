@@ -105,14 +105,23 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Redes
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="/rede" title="Redes">Listar</a>
-                                        <a class="dropdown-item" href="/rede/novo" title="Novo">Novo</a>
-                                    </div>
-                                </li>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Redes
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/rede" title="Redes">Listar</a>
+                                    <a class="dropdown-item" href="/rede/novo" title="Novo">Novo</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Switch
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/switch" title="Redes">Listar</a>
+                                    <a class="dropdown-item" href="/switch/novo" title="Novo">Novo</a>
+                                </div>
+                            </li>
                         </ul>
                         @else
                         <ul class="navbar-nav mr-3">

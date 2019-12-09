@@ -59,6 +59,16 @@ Route::prefix('rede')->group(function () {
 
 });
 
+Route::prefix('switch')->group(function () {
+  
+  Route::get('/', 'SwitchController@listar');
+  Route::get('/novo', 'SwitchController@detalhes');
+  Route::post('/novo', 'SwitchController@createOrUpdate');
+  Route::get('/{switch}/detalhes', 'SwitchController@detalhes');
+
+});
+
+
 // Route::get('/rede', 'RedeController@index');
 
 // Route::post('/rede', 'RedeController@createOrUpdate');
